@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Marcin Rochowski">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://allfont.net/cache/css/digital-7.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <title>Stopwatch inspired by oven timer</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button id="minutesIncrementation" onclick="minutesIncrementation()">+</button>
+        <button id="minutesDecrementation" onclick="minutesDecrementation()">-</button>
+        <button class="setMinutesLabel">set<br>minutes</button>
+        <div id="leftTens" class="screenValue">0</div>
+        <div id="leftOnes" class="screenValue">0</div>
+        <div id="separator" class="screenValue">:</div>
+        <div id="rightTens" class="screenValue">0</div>
+        <div id="rightOnes" class="screenValue">0</div>
+        <div id="progress">
+            <div class="fourth top-left" id="3"></div>
+            <div class="fourth top-right" id="4"></div>
+            <div class="fourth bottom-left" id="2"></div>
+            <div class="fourth bottom-right" id="1"></div>
+            <p id="progressValue" class="progressValue">100%</p>
+        </div>
+        <button id="start" onclick="startCountdown()">start</button>
+        <button id="stop" onclick="stopCountdown()" disabled>stop</button>
+        <button id="secondsIncrementation" onclick="secondsIncrementation()">+</button>
+        <button id="secondsDecrementation" onclick="secondsDecrementation()">-</button>
+        <button class="setSecondsLabel">set<br>seconds</button>
+    </div>
+
+</body>
+
+</html>

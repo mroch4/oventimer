@@ -1,0 +1,215 @@
+body {
+  background-color: #DDD;
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+      grid-template-areas: "a a d e f g h j k k" "b b d e f g h j l l" "c c i i i n n n m m";
+  grid-gap: 2px;
+  -ms-grid-columns: (48px)[4] 21px (48px)[5];
+      grid-template-columns: repeat(4, 48px) 21px repeat(5, 48px);
+  -ms-grid-rows: 60px 60px 30px;
+      grid-template-rows: 60px 60px 30px;
+  background-color: #333;
+  margin: 20px auto;
+  padding: 4px;
+  border-radius: 19px;
+}
+
+#minutesIncrementation {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: a;
+  font-family: Arial;
+  font-size: 50px;
+  text-align: right;
+  border-top-left-radius: 15px;
+}
+
+#minutesDecrementation {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: b;
+  font-family: Arial;
+  font-size: 50px;
+  text-align: right;
+  padding-right: 13px;
+}
+
+.setMinutesLabel {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: c;
+  font-family: Arial;
+  font-size: 10px;
+  text-transform: uppercase;
+  border-bottom-left-radius: 15px;
+}
+
+#secondsIncrementation {
+  -ms-grid-row: 1;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 2;
+  grid-area: k;
+  font-family: Arial;
+  font-size: 50px;
+  text-align: left;
+  border-top-right-radius: 15px;
+}
+
+#secondsDecrementation {
+  -ms-grid-row: 2;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 2;
+  grid-area: l;
+  font-family: Arial;
+  font-size: 50px;
+  text-align: left;
+  padding-left: 13px;
+}
+
+.setSecondsLabel {
+  -ms-grid-row: 3;
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 2;
+  grid-area: m;
+  font-family: Arial;
+  font-size: 10px;
+  text-transform: uppercase;
+  border-bottom-right-radius: 15px;
+}
+
+#leftTens {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: d;
+}
+
+#leftOnes {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: e;
+}
+
+#separator {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 5;
+  grid-area: f;
+}
+
+#rightTens {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 6;
+  grid-area: g;
+}
+
+#rightOnes {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 7;
+  grid-area: h;
+}
+
+@font-face {
+  font-family: digital-7;
+  src: url("./DS-DIGI.TTF");
+}
+
+.screenValue {
+  color: rgba(255, 0, 0, 0.8);
+  font-family: digital-7;
+  font-size: 100px;
+  text-align: right;
+  padding-top: 11px;
+}
+
+#progress {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 8;
+  grid-area: j;
+  margin-top: 27px;
+}
+
+.fourth {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background-color: rgba(255, 0, 0, 0.8);
+  visibility: hidden;
+}
+
+.fourth.top-left {
+  border-top-left-radius: 100%;
+}
+
+.fourth.top-right {
+  border-top-right-radius: 100%;
+}
+
+.fourth.bottom-left {
+  border-bottom-left-radius: 100%;
+}
+
+.fourth.bottom-right {
+  border-bottom-right-radius: 100%;
+}
+
+.progressValue {
+  font-family: Arial;
+  color: rgba(255, 0, 0, 0.8);
+  margin-top: 4px;
+  text-align: center;
+  visibility: hidden;
+}
+
+#start {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: i;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+
+#stop {
+  -ms-grid-row: 3;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 3;
+  grid-area: n;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #FFF;
+}
+
+button.setMinutesLabel, button.setSecondsLabel {
+  cursor: default;
+}
+
+button.setMinutesLabel:hover, button.setSecondsLabel:hover {
+  background-color: #FFF;
+}
+
+button:hover {
+  background-color: #EEE;
+}
+/*# sourceMappingURL=style.css.map */
