@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+$d: 50px;
+$radius: $d/4;
+$plusMinusFontSize: 30px;
+$screenFontSize: 100px;
+$labelFontSize: 10px;
+$wrapperColor: #333;
+$borderColor: #AAA;
+$fontColor: #EEE;
+$lightColor: rgba(0, 255, 220, 0.95);
+
+body {
+    background-image: url('../assets/inox.jpg');
+}
+
+.wrapper {
+    display: grid;
+    width: fit-content;
+    grid-template-areas:
+        ". . b c d e f . ."
+        "a a b c d e f g g"
+        "a a i j . n o g g"
+        ". . k k . p p . .";
+    grid-gap: 2px;
+    grid-template-columns: repeat(4, $d) 0.5*$d repeat(4, $d);
+    grid-template-rows: repeat(4, $d);
+    background-color: $wrapperColor;
+    border-radius: 25% 25% 50% 50%;
+    border: 2px solid black;
+    padding: 4px 4px 16px;
+    margin: 20px auto;
+}
+
+#progressValue {
+    visibility: hidden !important;
+}
+
+// buttons
+
+#minutesIncrementation {
+    grid-area: i;
+}
+
+#minutesDecrementation {
+    grid-area: j;
+}
+
+#secondsIncrementation {
+    grid-area: n;
+}
+
+#secondsDecrementation {
+    grid-area: o;
+}
+
+#minutesIncrementation,
+#minutesDecrementation,
+#secondsIncrementation,
+#secondsDecrementation {
+    background-color: black;
+    color: $fontColor;
+    font-size: $plusMinusFontSize;
+    border: 1px solid $borderColor;
+    border-radius: 50%;
+}
+
+// big buttons
+
+#start {
+    grid-area: a;
+}
+
+#stop {
+    grid-area: g;
+}
+
+#start,
+#stop {
+    background-color: #111;
+    color: $fontColor;
+    font-size: 3*$labelFontSize;
+    text-transform: uppercase;
+    font-family: 'Share Tech';
+    letter-spacing: 1px;
+    text-align: center;
+    border: 1px solid $borderColor;
+    border-radius: 50%;
+}
+
+// bottom section
+
+.setMinutesLabel {
+    grid-area: k;
+}
+
+.setSecondsLabel {
+    grid-area: p;
+}
+
+.setSecondsLabel,
+.setMinutesLabel {
+    background-color: $wrapperColor;
+    color: $fontColor;
+    text-transform: uppercase;
+    font-family: 'Share Tech';
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+// screen
+
+#leftTens {
+    grid-area: b;
+}
+
+#leftOnes {
+    grid-area: c;
+}
+
+#separator {
+    grid-area: d;
+}
+
+#rightTens {
+    grid-area: e;
+}
+
+#rightOnes {
+    grid-area: f;
+}
+
+@font-face {
+    font-family: digital-7;
+    src: url('./DS-DIGI.TTF');
+}
+
+.screenValue {
+    color: $lightColor;
+    font-family: digital-7;
+    font-size: $screenFontSize;
+    text-align: right;
+}
+
+// elements
+
+.wrapper>button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    &.setMinutesLabel,
+    &.setSecondsLabel {
+        cursor: default;
+    }
+}
+
+.cssChange {
+    background-color: #fcfcfc;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+#style_amica {
+    display: none;
+}

@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
+body {
+  background-image: url("../assets/inox.jpg");
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+      grid-template-areas: ". . b c d e f . ." "a a b c d e f g g" "a a i j . n o g g" ". . k k . p p . .";
+  grid-gap: 2px;
+  -ms-grid-columns: (50px)[4] 25px (50px)[4];
+      grid-template-columns: repeat(4, 50px) 25px repeat(4, 50px);
+  -ms-grid-rows: (50px)[4];
+      grid-template-rows: repeat(4, 50px);
+  background-color: #333;
+  border-radius: 25% 25% 50% 50%;
+  border: 2px solid black;
+  padding: 4px 4px 16px;
+  margin: 20px auto;
+}
+
+#progressValue {
+  visibility: hidden !important;
+}
+
+#minutesIncrementation {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: i;
+}
+
+#minutesDecrementation {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: j;
+}
+
+#secondsIncrementation {
+  -ms-grid-row: 3;
+  -ms-grid-column: 6;
+  grid-area: n;
+}
+
+#secondsDecrementation {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+  grid-area: o;
+}
+
+#minutesIncrementation,
+#minutesDecrementation,
+#secondsIncrementation,
+#secondsDecrementation {
+  background-color: black;
+  color: #EEE;
+  font-size: 30px;
+  border: 1px solid #AAA;
+  border-radius: 50%;
+}
+
+#start {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: a;
+}
+
+#stop {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 2;
+  grid-area: g;
+}
+
+#start,
+#stop {
+  background-color: #111;
+  color: #EEE;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: 'Share Tech';
+  letter-spacing: 1px;
+  text-align: center;
+  border: 1px solid #AAA;
+  border-radius: 50%;
+}
+
+.setMinutesLabel {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: k;
+}
+
+.setSecondsLabel {
+  -ms-grid-row: 4;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
+  grid-area: p;
+}
+
+.setSecondsLabel,
+.setMinutesLabel {
+  background-color: #333;
+  color: #EEE;
+  text-transform: uppercase;
+  font-family: 'Share Tech';
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+#leftTens {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: b;
+}
+
+#leftOnes {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: c;
+}
+
+#separator {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 5;
+  grid-area: d;
+}
+
+#rightTens {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 6;
+  grid-area: e;
+}
+
+#rightOnes {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 7;
+  grid-area: f;
+}
+
+@font-face {
+  font-family: digital-7;
+  src: url("./DS-DIGI.TTF");
+}
+
+.screenValue {
+  color: rgba(0, 255, 220, 0.95);
+  font-family: digital-7;
+  font-size: 100px;
+  text-align: right;
+}
+
+.wrapper > button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.wrapper > button.setMinutesLabel, .wrapper > button.setSecondsLabel {
+  cursor: default;
+}
+
+.cssChange {
+  background-color: #fcfcfc;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 3px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+#style_amica {
+  display: none;
+}
+/*# sourceMappingURL=style2.css.map */

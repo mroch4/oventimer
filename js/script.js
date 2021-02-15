@@ -95,7 +95,7 @@ function startCountdown() {
     } else {
         function countdown() {
             if (setTime == 0) {
-                var audio = new Audio('./bell.mp3');
+                var audio = new Audio('./assets/bell.mp3');
                 audio.play();
                 return
             } else {
@@ -183,4 +183,16 @@ function startCountdown() {
 function stopCountdown() {
     location.reload();
     return;
+}
+
+function changeCSS(cssFile, cssLinkIndex) {
+
+    var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+    var newlink = document.createElement("link");
+
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    newlink.setAttribute("href", cssFile);
+
+    document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 }

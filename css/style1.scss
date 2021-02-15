@@ -1,0 +1,206 @@
+$d: 60px;
+$radius: $d/4;
+$plusMinusFontSize: 50px;
+$screenFontSize: 100px;
+$labelFontSize: 10px;
+$labelFontFamily: Arial;
+$lightColor: rgba(255, 0, 0, 0.8);
+
+body {
+    background-color: #DDD;
+}
+
+.wrapper {
+    display: grid;
+    width: fit-content;
+    grid-template-areas:
+        "a a d e f g h j k k"
+        "b b d e f g h j l l"
+        "c c i i i n n n m m";
+    grid-gap: 2px;
+    grid-template-columns: repeat(4, 0.8*$d) 0.35*$d repeat(5, 0.8*$d);
+    grid-template-rows: $d $d 0.5*$d;
+    background-color: #333;
+    margin: 20px auto;
+    padding: 4px;
+    border-radius: $radius+4px;
+}
+
+// left section
+
+#minutesIncrementation {
+    grid-area: a;
+    font-family: $labelFontFamily;
+    font-size: $plusMinusFontSize;
+    text-align: right;
+    border-top-left-radius: $radius;
+}
+
+#minutesDecrementation {
+    grid-area: b;
+    font-family: $labelFontFamily;
+    font-size: $plusMinusFontSize;
+    text-align: right;
+    padding-right: 13px;
+}
+
+.setMinutesLabel {
+    grid-area: c;
+    font-family: $labelFontFamily;
+    font-size: $labelFontSize;
+    text-transform: uppercase;
+    border-bottom-left-radius: $radius;
+}
+
+// right section
+
+#secondsIncrementation {
+    grid-area: k;
+    font-family: $labelFontFamily;
+    font-size: $plusMinusFontSize;
+    text-align: left;
+    border-top-right-radius: $radius;
+}
+
+#secondsDecrementation {
+    grid-area: l;
+    font-family: $labelFontFamily;
+    font-size: $plusMinusFontSize;
+    text-align: left;
+    padding-left: 13px;
+}
+
+.setSecondsLabel {
+    grid-area: m;
+    font-family: $labelFontFamily;
+    font-size: $labelFontSize;
+    text-transform: uppercase;
+    border-bottom-right-radius: $radius;
+}
+
+// screen
+
+#leftTens {
+    grid-area: d;
+}
+
+#leftOnes {
+    grid-area: e;
+}
+
+#separator {
+    grid-area: f;
+}
+
+#rightTens {
+    grid-area: g;
+}
+
+#rightOnes {
+    grid-area: h;
+}
+
+@font-face {
+    font-family: digital-7;
+    src: url('./DS-DIGI.TTF');
+}
+
+.screenValue {
+    color: $lightColor;
+    font-family: digital-7;
+    font-size: $screenFontSize;
+    text-align: right;
+    padding-top: 11px;
+}
+
+// progress fourths
+
+#progress {
+    grid-area: j;
+    margin-top: 27px;
+}
+
+.fourth {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    background-color: $lightColor;
+    visibility: hidden;
+
+    &.top-left {
+        border-top-left-radius: 100%;
+    }
+
+    &.top-right {
+        border-top-right-radius: 100%;
+    }
+
+    &.bottom-left {
+        border-bottom-left-radius: 100%;
+    }
+
+    &.bottom-right {
+        border-bottom-right-radius: 100%;
+    }
+}
+
+.progressValue {
+    font-family: $labelFontFamily;
+    color: $lightColor;
+    margin-top: 4px;
+    text-align: center;
+    visibility: hidden;
+}
+
+// bottom section
+
+#start {
+    grid-area: i;
+    font-size: 2*$labelFontSize;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+#stop {
+    grid-area: n;
+    font-size: 2*$labelFontSize;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+// elements
+
+.wrapper>button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #FFF;
+
+    &.setMinutesLabel,
+    &.setSecondsLabel {
+        cursor: default;
+
+        &:hover {
+            background-color: #FFF;
+        }
+    }
+}
+
+.wrapper>button:hover {
+    background-color: #EEE;
+}
+
+.cssChange {
+    background-color: rgb(252, 252, 252);
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+#style_beko {
+    display: none;
+}
